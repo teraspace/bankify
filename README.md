@@ -5,20 +5,23 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby on rails versions
+  Ruby 2.7.5
+  Rails 6.0.*
 
 * System dependencies
+  Docker Compose 2.10.*
+  Docker Engine 10
 
-* Configuration
+To start bankify:
 
-* Database creation
+1. Build container
+  docker-compose build
 
-* Database initialization
+2. Database initialization
+  docker-compose run web rake db:create db:migrate RAILS_ENV=development
 
-* How to run the test suite
+3. Run
+  docker-compose up
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+4. Open http://localhost:3000 in your browser
