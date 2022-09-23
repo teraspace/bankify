@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.7'
+gem 'rails', '~> 6.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -53,8 +53,10 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "tailwindcss-rails", "~> 2.0"
+gem "tailwindcss-rails", "~> 2"
 gem 'ransack'
 gem 'kaminari'
 gem 'will_paginate', '~> 3.3'
 gem 'devise'
+gem 'devise-tailwindcssed', git: 'https://github.com/posiczko/devise-tailwindcssed.git'
+gem 'webpacker'
