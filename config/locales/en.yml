@@ -4,11 +4,11 @@
 #
 # To use the locales, use `I18n.t`:
 #
-#     I18n.t 'hello'
+#     I18n.t "hello"
 #
 # In views, this is aliased to just `t`:
 #
-#     <%= t('hello') %>
+#     <%= t("hello") %>
 #
 # To use a different locale, set it with `I18n.locale`:
 #
@@ -24,10 +24,44 @@
 # Instead, surround them with single quotes.
 #
 # en:
-#   'true': 'foo'
+#   "true": "foo"
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  sign_in: "Sign In"
+  sign_out: "Sign Out"
+  sign_up: "Sign Up"
+  close: "Close"
+  home: "Home"
+  services: "Services"
+  contact: "Contact"
+  open_main_menu: "Open Main Menu"
+  change_password: "Change Your Password"
+  forgot_your_password: "Forgot your password?"
+  login: "Log In"
+  footer_text: "©2022 Bankify Corp. All rights reserved."
+  welcome: "Welcome"
+  confirm_message: "You can confirm your account email through the link below:"
+  confirm_my_account: "Confirm my account"
+  confirm_changed: "We're contacting you to notify you that your email is being changed to"
+  request_message: "Someone has requested a link to change your password. You can do this through the link below." 
+  advice_message: "If you didn't request this, please ignore this email."
+  account_locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+  click_to_unlock_messate: "Click the link below to unlock your account:"
+  example_text: "Fintecth disruptor!"
+  email: 'email'
+  email_sample: 'sample@example.com'
+  new_password: 'new-password'
+  forgot_passwod: 'Forgot password?'
+  are_you_sure: 'Are you sure?'
+  unhappy: 'Unhappy?'
+  back: 'Back'
+  leave_blank_or_change_it: "leave blank if you don't want to change it"
+  edit: 'Edit'
+  didn_receive_confirmation: "Didn't receive confirmation info?"
+  didn_receive_unlock_info: "Didn't receive unlock info?"
+  sign_in_with: "Sign in with"
+  current_password: "current-password"
+
