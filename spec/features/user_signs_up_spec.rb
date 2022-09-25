@@ -5,9 +5,9 @@ RSpec.feature 'User signs up' do
     fill_in 'user_email', with: 'username@example.com'
     fill_in 'user_password', with: '123456'
     fill_in 'user_password_confirmation', with: '123456'
-    click_button 'Sign Up'
-    expect(page).to have_text 'Welcome! You have signed up successfully.'
-    expect(page).to have_link 'Sign Out'
+    click_button t('sign_up')
+    expect(page).to have_text t('welcome')
+    expect(page).to have_link t('sign_out')
     expect(page).to have_current_path root_path
   end
 end

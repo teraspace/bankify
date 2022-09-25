@@ -64,4 +64,17 @@ en:
   didn_receive_unlock_info: "Didn't receive unlock info?"
   sign_in_with: "Sign in with"
   current_password: "current-password"
-
+  show_this_bank: "Show this bank"
+  edit_this_bank: "Edit this bank"
+  prohibited_save_bank: "prohibited this bank from being saved:"
+  name: "name"
+  back_to_banks: "Back to banks"
+  banks: 'Banks'
+  editing_bank: 'Edtiting bank'
+  oops: 'Oops!'
+  was_success_created: "was successfully created."
+  was_success_updated: "was successfully updated."
+  was_success_destroyed: "was successfully destroyed."
+  destroy_this_bank: "Destroy this bank"
+  actions: "Actions"
+  search: "Search"

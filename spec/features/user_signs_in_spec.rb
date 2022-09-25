@@ -5,9 +5,9 @@ RSpec.feature 'User signs in' do
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log In'
-    expect(page).to have_text 'Fintecth disruptor!'
-    expect(page).to have_link 'Sign Out'
+    click_button t('login')
+    expect(page).to have_text t('example_text')
+    expect(page).to have_link t('sign_out')
     expect(page).to have_current_path root_path
   end
 
@@ -16,8 +16,8 @@ RSpec.feature 'User signs in' do
     visit new_user_session_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: 'badpassword'
-    click_button 'Log In'
-    expect(page).to have_text 'Log In Oops! Invalid email or password.'
-    expect(page).to have_no_link 'Sign Up'
+    click_button t('login')
+    expect(page).to have_text t('oops')
+    expect(page).to have_no_link t('sign_up')
   end
 end

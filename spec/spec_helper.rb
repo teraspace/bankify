@@ -15,12 +15,24 @@
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'byebug'
 require 'rails_helper'
-
 def json_body
   JSON.parse(response.body)
 end
 
+def t(text)
+  I18n.t(text)
+end
+
+def create(object)
+  FactoryBot.create(object)
+end
+
+def build(object)
+  FactoryBot.build(object)
+end
+
 RSpec.configure do |config|
+  config.include DeviseHelper, type: :request
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
