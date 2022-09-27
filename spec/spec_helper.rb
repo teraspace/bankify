@@ -13,8 +13,11 @@
 # it.
 #
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+
+
 require 'byebug'
 require 'rails_helper'
+
 def json_body
   JSON.parse(response.body)
 end
@@ -32,10 +35,14 @@ def build(object)
 end
 
 RSpec.configure do |config|
-  config.include DeviseHelper, type: :request
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
+  config.include Devise::Test::IntegrationHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :feature
+
+  config.include Warden::Test::Helpers, type: :request
+  
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

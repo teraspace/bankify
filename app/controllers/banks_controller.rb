@@ -3,7 +3,7 @@ class BanksController < ApplicationController
   before_action :set_search, only: %i[index]
   # GET /banks or /banks.json
   def index
-    @banks = @q.result.order(:name).page(params[:page]).per_page(2)
+    @banks = @q.result.order(:name).page(params[:page]).per_page(5)
   end
 
   # GET /banks/1 or /banks/1.json

@@ -9,4 +9,5 @@ class User < ApplicationRecord
                     uniqueness: true
   validates :encrypted_password, presence: true
   has_many :banks, dependent: :nullify
+  has_many :providers, dependent: :nullify
 end

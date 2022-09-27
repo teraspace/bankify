@@ -69,3 +69,4 @@ gem 'devise-token_authenticatable'
 gem 'devise-tailwindcssed', git: 'https://github.com/posiczko/devise-tailwindcssed.git'
 gem 'webpacker'
 gem 'dotenv-rails'
+gem "view_component"
