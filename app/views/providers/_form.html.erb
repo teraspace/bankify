@@ -1,10 +1,10 @@
-<%= form_with(model: provider, class: "contents") do |form| %>
-  <% if provider.errors.any? %>
+<%= form_with(model: @subject, class: "contents") do |form| %>
+  <% if @subject.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
-      <h2><%= pluralize(provider.errors.count, "error") %> prohibited this provider from being saved:</h2>
+      <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this provider from being saved:</h2>
 
       <ul>
-        <% provider.errors.each do |error| %>
+        <% @subject.errors.each do |error| %>
           <li><%= error %></li>
         <% end %>
       </ul>
