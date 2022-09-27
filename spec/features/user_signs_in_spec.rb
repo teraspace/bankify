@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.feature 'User signs in' do
-  scenario 'with valid credentials', :js => false do
+  scenario 'with valid credentials', js: false do
     user = FactoryBot.create(:user)
     visit new_user_session_path
     fill_in 'Email', with: user.email
@@ -11,7 +11,7 @@ RSpec.feature 'User signs in' do
     expect(page).to have_current_path root_path
   end
 
-  scenario 'with invalid credentials', :js => false do
+  scenario 'with invalid credentials', js: false do
     user = FactoryBot.build(:user)
     visit new_user_session_path
     fill_in 'Email', with: user.email

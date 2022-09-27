@@ -1,10 +1,10 @@
-<%= form_with(model: bank, class: "contents",  local: true) do |form| %>
-  <% if bank.errors.any? %>
+<%= form_with(model: @subject, class: "contents",  local: true) do |form| %>
+  <% if @subject.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(bank.errors.count, "error") %> <%= t('prohibited_save_bank') %></h2>
 
       <ul>
-        <% @bank.errors.full_messages.each do |error| %>
+        <% @subject.errors.full_messages.each do |error| %>
           <li><%= error %></li>
         <% end %>
       </ul>

@@ -5,39 +5,7 @@
 
   <div class="container mx-auto py-10">
     <h1 class="font-bold text-4xl"><%= t('banks') %></h1>
-    
   </div>
 
-  <div id="banks" class="container flex flex-wrap justify-between items-center mx-auto">
-    <table class="md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-200">
-      <thead class="text-xs text-gray-200 uppercase bg-gray dark:bg-gray-700 dark:text-gray-400">
-        <tr class="">
-          <th class="py-3 px-6"><%= t('name').capitalize %></th>
-          <th class="py-3 px-6"><%= t('actions') %></th>
-          <th class="py-3 px-6"> 
-            <%= search_form_for @q do |f| %>
-              <%= f.search_field :name_cont, class: 'text-black py-2',  placeholder: t('search') %>
-              <%= hidden_field_tag 'page', '1', {class: 'ransack-page'} %>
-            <% end %>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @banks.each do |bank| %>
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= bank.name %></td>
-            <td class="py-4 px-6"><%= render "actions", bank: bank %></td><td></td>
-          </tr>
-        <% end %>
-      </tbody>
-      <tfoot>
-        <tr>
-          <td> <%= will_paginate @banks, list_classes: %w(pagination justify-content-end) %> </td>
-        </tr>
-      </tfoot>
-    </table>
-    <div class="py-5">
-      <%= link_to t('new_bank'), new_bank_path, class: "rounded-lg py-2 px-3 bg-blue-600 text-white block font-medium",  'data-no-turbolink' => true %>  
-    </div>
-  </div>
+  <%= render(BankComponent.new(banks: @collection)) %>
 </div>

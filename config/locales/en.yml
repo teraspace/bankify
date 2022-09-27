@@ -60,6 +60,7 @@ en:
   back: 'Back'
   leave_blank_or_change_it: "leave blank if you don't want to change it"
   edit: 'Edit'
+  delete: 'Delete'
   didn_receive_confirmation: "Didn't receive confirmation info?"
   didn_receive_unlock_info: "Didn't receive unlock info?"
   sign_in_with: "Sign in with"
@@ -79,3 +80,11 @@ en:
   actions: "Actions"
   search: "Search"
   providers: "Providers"
+  contact_name: "Contact Name"
+  cell_phone: "Cell Phone"
+  bank_name: 'Bank Name'
+  account: 'Account'
+  back_to_providers: 'Back to providers'
+  new_provider: 'New provider'
+  edit_provider: 'Edit this provider'
+  destroy_this_provider: 'Destroy this provider'
