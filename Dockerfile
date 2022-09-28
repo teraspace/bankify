@@ -1,7 +1,8 @@
 FROM ruby:2.7.6
-ENV DATABASE_HOST=db
-ENV DATABASE_USERNAME=developer
-ENV DATABASE_PASSWORD=password
+ENV POSTGRES_HOST=db
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=password
+ENV POSTGRES_PORT=5432
 RUN apt-get update -qq \
 && apt-get install -y nodejs postgresql-client openssh-server sudo -y
 RUN echo 'root:test' | chpasswd

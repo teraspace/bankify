@@ -22,6 +22,6 @@ To start bankify:
   docker-compose run web rake db:create db:migrate RAILS_ENV=development
 
 3. Run
-  docker-compose up
+  docker-compose build and docker-compose up consecutively
 
 4. Open http://localhost:3000 in your browser
