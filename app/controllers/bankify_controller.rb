@@ -4,7 +4,6 @@ class BankifyController < ApplicationController
   before_action :set_search, only: %i[index]
 
   def index
-    byebug
     @collection = @q.result.order(:name).page(params[:page]).per_page(get_per_page)
   end
 
@@ -17,7 +16,7 @@ class BankifyController < ApplicationController
 
     respond_to do |format|
       if @subject.save
-        format.html { redirect_to controller_url(@subject), notice: "#{self.controller_name.capitalize} #{I18n.t('was_success_created')}" }
+        format.html { redirect_to controller_url, notice: "#{self.controller_name.capitalize} #{I18n.t('was_success_created')}" }
         format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -29,7 +28,7 @@ class BankifyController < ApplicationController
   def update
     respond_to do |format|
       if @subject.update(entity_params)
-        format.html { redirect_to controller_url(@subject), notice: "#{controller_name.capitalize} #{I18n.t('was_success_updated')}" }
+        format.html { redirect_to controller_url, notice: "#{controller_name.capitalize} #{I18n.t('was_success_updated')}" }
         format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,7 +57,7 @@ class BankifyController < ApplicationController
   end
 
   def controller_url
-    "#{controller_name}_url"
+    eval("#{controller_name}_path")
   end
 
   def entity
@@ -66,7 +65,6 @@ class BankifyController < ApplicationController
   end
 
   def set_entity
-    byebug
     @subject = entity.find(params[:id])
   end
 

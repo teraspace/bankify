@@ -7,5 +7,7 @@ class Provider < ApplicationRecord
   validates :contact_name, presence: true
   validates :bank_id, presence: true
   validates_length_of :account, maximum: 15
-  validates_length_of :cell_phone, minimum: 10, maximum: 10
+  validates :cell_phone, length: { minimum: 10, maximum: 10 }, allow_blank: true
+  validates :account, length: { minimum: 1, maximum: 15 }, allow_blank: true
+  validates_length_of :nit, minimum: 10, maximum: 12
 end

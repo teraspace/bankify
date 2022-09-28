@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dashboards
   resources :providers
   resources :banks
   get 'welcome/index'
@@ -12,5 +13,5 @@ Rails.application.routes.draw do
     get 'forgot_password', to: 'users/passwords#new'
     get 'reset_password', to: 'users/passwords#edit'
   end
-  root to: "welcome#index"
+  root to: "dashboards#index"
 end

@@ -88,3 +88,5 @@ en:
   new_provider: 'New provider'
   edit_provider: 'Edit this provider'
   destroy_this_provider: 'Destroy this provider'
+  dashboard: 'Dashboard'
+  empty_info_message: 'Sin información en la tabla'

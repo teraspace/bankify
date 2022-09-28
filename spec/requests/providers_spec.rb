@@ -72,9 +72,9 @@ RSpec.describe '/providers', type: :request do
         }.to change(Provider, :count).by(1)
       end
 
-      it 'redirects to the created provider' do
+      it 'redirects to providers' do
         post providers_url, params: { provider: valid_attributes }
-        expect(response).to redirect_to(provider_url(Provider.last))
+        expect(response).to redirect_to(providers_url)
       end
     end
 
@@ -111,7 +111,7 @@ RSpec.describe '/providers', type: :request do
         provider = Provider.create! valid_attributes
         patch provider_url(provider), params: { provider: new_attributes }
         provider.reload
-        expect(response).to redirect_to(provider_url(provider))
+        expect(response).to redirect_to(providers_url)
       end
     end
   end

@@ -6,9 +6,11 @@ RSpec.feature 'User signs in' do
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
     click_button t('login')
-    expect(page).to have_text t('example_text')
+    expect(page).to have_text t('devise.sessions.signed_in')
     expect(page).to have_link t('sign_out')
     expect(page).to have_current_path root_path
+    expect(page).to have_text t('banks')
+    expect(page).to have_text t('dashboard')
   end
 
   scenario 'with invalid credentials', js: false do

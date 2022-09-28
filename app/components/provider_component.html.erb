@@ -1,7 +1,7 @@
-<div id="providers" class="container flex flex-wrap justify-between items-center mx-auto">
+<div id="providers" class="container flex flex-wrap justify-between items-center mx-auto bg-white shadow-md rounded my-6">
   <table class="md:table-fixed w-full text-sm text-left text-gray-500 dark:text-gray-200">
     <thead class="text-xs text-gray-200 uppercase bg-gray dark:bg-gray-700 dark:text-gray-400">
-      <tr class="">
+      <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
         <th class="py-3 px-6"><%= t('name').capitalize %></th>
         <th class="py-3 px-6"><%= t('contact_name').capitalize %></th>
         <th class="py-3 px-6"><%= t('cell_phone').capitalize %></th>
@@ -10,23 +10,23 @@
         <th class="py-3 px-6"><%= t('actions') %></th>
         <th class="py-3 px-6"> 
           <%= form_with url: providers_path, local: true, method: :get do |f| %>
-            <%= text_field(:q, :name_cont, size: 20, class: 'text-black py-2',  placeholder: t('search')) %>
+            <%= text_field(:q, :name_cont, size: 15, class: 'text-black py-2',  placeholder: t('search')) %>
             <%= hidden_field_tag 'page', '1', {class: 'ransack-page'} %>
             <%= hidden_field_tag 'per_page', '10', {class: 'ransack-page'} %>
           <% end %> 
         </th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="text-gray-600 text-sm font-light">
       <% @providers.each do |provider| %>
-        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-          <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <tr class="border-b border-gray-200 hover:bg-gray-100">
+          <td class="py-3 px-4 text-left whitespace-nowrap">
             <%= link_to provider.name, provider_path(provider), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
           </td>
-          <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= provider.contact_name %></td>
-          <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= provider.cell_phone %></td>
-          <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= provider.bank.name %></td>
-          <td class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= provider.account %></td>
+          <td class="py-3 px-6 text-left whitespace-nowrap"><%= provider.contact_name %></td>
+          <td class="py-3 px-6 text-left whitespace-nowrap"><%= cell_phone(provider) %></td>
+          <td class="py-3 px-6 text-left whitespace-nowrap"><%= provider.bank.name %></td>
+          <td class="py-3 px-6 text-left whitespace-nowrap"><%= account(provider) %></td>
           <td class="py-4 px-6"><%= render "layouts/partials/actions", subject: provider %></td><td></td>
         </tr>
       <% end %>
